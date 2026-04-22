@@ -1,0 +1,19 @@
+- docker-compose down NEW
+- assure new MT4 accounts are "active = False" at start
+- OLD's is_enabled_ws_recv = False
+- leave OLD running
+
+- NEW's "TABLE_ACCS = tc_accounts" (no "_test" suffix)
+- docker-compose up NEW
+- see behaviour
+   - if problem:
+      - docker-compose down
+      - OLD's is_enabled_ws_recv = True
+      - NEW's "TABLE_ACCS = tc_accounts_test"
+   - else:
+      - continue with OLD
+
+- toggle new MT4 accounts to "active = True"
+- keep watching behaviour
+   - if problem:
+      - set back MT4 accounts to "active = False"

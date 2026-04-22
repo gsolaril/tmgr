@@ -1,0 +1,53 @@
+version: "3.9"
+
+x-common-environment: &common-environment
+  - DEBUG_MODE: "true"
+  - SESSION_NAME: TM2
+  - N_WORKERS_ZMQ: 30
+  - DB_NAME: postgres
+  - DB_USER: postgres
+  - DB_PASS: abcdefgh
+  - DB_HOST: localhost
+  - DB_PORT: 5432
+  - ZMQ_HOST: localhost
+  - ZMQ_PORT: 5555
+  - LOKI_HOST: localhost
+  - LOKI_PORT: 3100
+  - MT_API_URL_4: "{protocol}://localhost:8083/"
+  - MT_API_URL_5: "{protocol}://localhost:5000/"
+
+services:
+
+  core:
+    build:
+      context: .
+      dockerfile: core/Dockerfile
+    container_name: tm-core
+    environment:
+      <<: *common-environment
+      ZMQ_HOST: localhost
+      KEY_TOKENS: TOKENS
+      TOKEN_TIMEOUT: 30
+      TRADE_TIMEOUT: 90
+      REDIS_HOST: localhost
+      REDIS_PORT: 6379
+    networks:
+      - network
+
+  gui:
+    build:
+      context: .
+      dockerfile: gui/Dockerfile
+    ports:
+      - "3001:3001"
+    container_name: tm-gui
+    environment:
+      <<: *common-environment
+      GUI_HOST: localhost
+      GUI_PORT: 3001
+    networks:
+      - network
+
+networks:
+  network:
+    external: true

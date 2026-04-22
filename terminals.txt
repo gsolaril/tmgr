@@ -1,0 +1,9 @@
+clear; docker logs --follow --tail=800 tm2-core
+clear; journalctl -u monitoring-globalmonitor.service -o cat -f
+clear; docker logs --follow --tail=800 0715_cmma_new
+clear; docker logs --follow --tail=800 0712_spiky
+clear; docker logs --follow --tail=800 0716_spiky
+clear; docker logs --follow --tail=800 0919_3ls_exposure
+clear; docker logs --follow --tail=800 0925-ssn-mrsi
+clear; docker logs --follow --tail=800 0925-ssn-stoch
+clear; docker logs --follow --tail=800 0925-ssn-mstoch

@@ -1,0 +1,30 @@
+# Core
+numpy==1.26.3
+pandas==2.2.0
+SQLAlchemy==2.0.25
+psycopg2-binary==2.9.9
+
+# Networking / async
+requests==2.31.0
+aiohttp==3.9.3
+websockets==12.0
+
+# Messaging / serialization
+msgpack==1.0.7
+pika==1.3.2
+pyzmq
+
+# Scheduling
+APScheduler==3.10.4
+
+# Logging
+loguru==0.7.2
+loki-logger-handler==0.1.1
+
+# Services
+redis==5.0.2
+
+# GUI
+dash==2.16.1
+flet
+matplotlib==3.8.2

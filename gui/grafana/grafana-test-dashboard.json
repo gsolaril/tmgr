@@ -1,0 +1,3893 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "target": {
+          "limit": 100,
+          "matchAny": false,
+          "tags": [],
+          "type": "dashboard"
+        },
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 2,
+  "id": 3,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 2,
+      "panels": [],
+      "title": "Logging",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "-- Dashboard --"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unitScale": true
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "/DEBUG/"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "#0000ff",
+                  "mode": "fixed"
+                }
+              },
+              {
+                "id": "links",
+                "value": [
+                  {
+                    "title": "",
+                    "url": "http://17.171.117.71:3000/d/test/test-dashboard?var-log_level=DEBUG"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "/INFO/"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "#ffffff",
+                  "mode": "fixed"
+                }
+              },
+              {
+                "id": "links",
+                "value": [
+                  {
+                    "title": "",
+                    "url": "http://17.171.117.71:3000/d/test/test-dashboard?var-log_level=INFO&${__url_time_range}"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "/SUCCESS/"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "#00ff00",
+                  "mode": "fixed"
+                }
+              },
+              {
+                "id": "links",
+                "value": [
+                  {
+                    "title": "",
+                    "url": "http://17.171.117.71:3000/d/test/test-dashboard?var-log_level=SUCCESS&${__url_time_range}"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "/WARNING/"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "#ffff00",
+                  "mode": "fixed"
+                }
+              },
+              {
+                "id": "links",
+                "value": [
+                  {
+                    "title": "",
+                    "url": "http://17.171.117.71:3000/d/test/test-dashboard?var-log_level=WARNING&${__url_time_range}"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "/ERROR/"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "#ff0000",
+                  "mode": "fixed"
+                }
+              },
+              {
+                "id": "links",
+                "value": [
+                  {
+                    "title": "",
+                    "url": "http://17.171.117.71:3000/d/test/test-dashboard?var-log_level=ERROR&${__url_time_range}"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "/CRITICAL/"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "#ff0000",
+                  "mode": "fixed"
+                }
+              },
+              {
+                "id": "links",
+                "value": [
+                  {
+                    "title": "",
+                    "url": "http://17.171.117.71:3000/d/test/test-dashboard?var-log_level=CRITICAL&${__url_time_range}"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 24,
+        "x": 0,
+        "y": 1
+      },
+      "id": 6,
+      "links": [],
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "vertical",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "/.*/",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.3.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "datasource",
+            "uid": "-- Dashboard --"
+          },
+          "panelId": 1,
+          "refId": "A"
+        }
+      ],
+      "transformations": [
+        {
+          "id": "sortBy",
+          "options": {
+            "fields": {},
+            "sort": [
+              {
+                "desc": true,
+                "field": "Time"
+              }
+            ]
+          }
+        },
+        {
+          "id": "extractFields",
+          "options": {
+            "format": "kvp",
+            "keepTime": false,
+            "replace": false,
+            "source": "Line"
+          }
+        },
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {
+              "Line": true,
+              "Time": true,
+              "file": true,
+              "function": true,
+              "id": true,
+              "labels": true,
+              "level": false,
+              "line": true,
+              "message": true,
+              "module": true,
+              "name": true,
+              "path": true,
+              "process": true,
+              "thread": true,
+              "timestamp": false,
+              "tsNs": true
+            },
+            "includeByName": {},
+            "indexByName": {
+              "Line": 0,
+              "Time": 10,
+              "file": 7,
+              "function": 13,
+              "id": 4,
+              "labels": 1,
+              "level": 11,
+              "line": 14,
+              "message": 15,
+              "module": 12,
+              "name": 9,
+              "path": 8,
+              "process": 5,
+              "stacktrace": 16,
+              "thread": 6,
+              "timestamp": 3,
+              "tsNs": 2
+            },
+            "renameByName": {
+              "Time": "Timestamp",
+              "function": "Function",
+              "level": "Level",
+              "line": "# Line",
+              "message": "Log",
+              "module": "Module",
+              "stacktrace": "Traceback",
+              "timestamp": ""
+            }
+          }
+        },
+        {
+          "id": "groupBy",
+          "options": {
+            "fields": {
+              "Level": {
+                "aggregations": [],
+                "operation": "groupby"
+              },
+              "timestamp": {
+                "aggregations": [
+                  "count"
+                ],
+                "operation": "aggregate"
+              }
+            }
+          }
+        },
+        {
+          "id": "rowsToFields",
+          "options": {
+            "mappings": []
+          }
+        }
+      ],
+      "transparent": true,
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "e06497e3-42b8-4a19-8b1a-2d2ed835b209"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "filterable": true,
+            "inspect": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unitScale": true
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "time"
+            },
+            "properties": [
+              {
+                "id": "custom.minWidth",
+                "value": 190
+              },
+              {
+                "id": "unit",
+                "value": "time: YYYY/MM/DD HH:mm:ss.SSS"
+              },
+              {
+                "id": "displayName",
+                "value": "Time"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "alias_source"
+            },
+            "properties": [
+              {
+                "id": "custom.minWidth",
+                "value": 100
+              },
+              {
+                "id": "displayName",
+                "value": "Source"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "server"
+            },
+            "properties": [
+              {
+                "id": "custom.minWidth",
+                "value": 175
+              },
+              {
+                "id": "displayName",
+                "value": "Server"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "account"
+            },
+            "properties": [
+              {
+                "id": "custom.minWidth",
+                "value": 120
+              },
+              {
+                "id": "displayName",
+                "value": "# Account"
+              },
+              {
+                "id": "custom.align",
+                "value": "right"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "ticket_source"
+            },
+            "properties": [
+              {
+                "id": "custom.minWidth",
+                "value": 140
+              },
+              {
+                "id": "displayName",
+                "value": "# Ticket, source"
+              },
+              {
+                "id": "custom.align",
+                "value": "right"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "ticket_target"
+            },
+            "properties": [
+              {
+                "id": "custom.minWidth",
+                "value": 140
+              },
+              {
+                "id": "displayName",
+                "value": "# Ticket, target"
+              },
+              {
+                "id": "custom.align",
+                "value": "right"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "action"
+            },
+            "properties": [
+              {
+                "id": "custom.minWidth",
+                "value": 100
+              },
+              {
+                "id": "displayName",
+                "value": "Action"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "comment"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 691
+              },
+              {
+                "id": "displayName",
+                "value": "Comment"
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 24,
+        "x": 0,
+        "y": 3
+      },
+      "id": 10,
+      "options": {
+        "cellHeight": "sm",
+        "footer": {
+          "countRows": false,
+          "fields": "",
+          "reducer": [
+            "sum"
+          ],
+          "show": false
+        },
+        "showHeader": true,
+        "sortBy": []
+      },
+      "pluginVersion": "10.3.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-postgresql-datasource",
+            "uid": "e06497e3-42b8-4a19-8b1a-2d2ed835b209"
+          },
+          "editorMode": "code",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "SELECT * FROM (\r\n  SELECT TO_TIMESTAMP(t_resp / 1e6) AT TIME ZONE 'UTC' AS time,\r\n    alias_source, server, account, action, ticket_source,\r\n    ticket as ticket_target, comment\r\n    FROM tc_responses WHERE (success = false)\r\n    AND comment ~ '201' AND comment !~ '(not found|stops)'\r\n) WHERE time BETWEEN $__timeFrom() AND $__timeTo()",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          }
+        }
+      ],
+      "title": "[top = most recent] - Failed requests",
+      "transformations": [
+        {
+          "id": "sortBy",
+          "options": {
+            "fields": {},
+            "sort": [
+              {
+                "desc": true,
+                "field": "time"
+              }
+            ]
+          }
+        }
+      ],
+      "type": "table"
+    },
+    {
+      "datasource": {
+        "type": "loki",
+        "uid": "e1cebbce-2db5-4db6-b00d-2d786c80808b"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "filterable": true,
+            "inspect": false,
+            "minWidth": 200
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unitScale": true
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Timestamp"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "time: YYYY/MM/DD HH:mm:ss.SSS"
+              },
+              {
+                "id": "custom.minWidth",
+                "value": 190
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Level"
+            },
+            "properties": [
+              {
+                "id": "custom.minWidth",
+                "value": 80
+              },
+              {
+                "id": "mappings",
+                "value": [
+                  {
+                    "options": {
+                      "CRITICAL": {
+                        "color": "#ff5a5a",
+                        "index": 5,
+                        "text": "CRITICAL!!!!!!"
+                      },
+                      "DEBUG": {
+                        "color": "#0000ff",
+                        "index": 0
+                      },
+                      "ERROR": {
+                        "color": "#ff0000",
+                        "index": 4
+                      },
+                      "INFO": {
+                        "color": "#ffffff",
+                        "index": 1
+                      },
+                      "SUCCESS": {
+                        "color": "#00ff00",
+                        "index": 2
+                      },
+                      "WARNING": {
+                        "color": "#ffff00",
+                        "index": 3
+                      }
+                    },
+                    "type": "value"
+                  }
+                ]
+              },
+              {
+                "id": "custom.cellOptions",
+                "value": {
+                  "type": "color-text"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Module"
+            },
+            "properties": [
+              {
+                "id": "custom.minWidth",
+                "value": 80
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Function"
+            },
+            "properties": [
+              {
+                "id": "custom.minWidth",
+                "value": 175
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "# Line"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 50
+              },
+              {
+                "id": "displayName",
+                "value": "Ln"
+              },
+              {
+                "id": "links",
+                "value": [
+                  {
+                    "targetBlank": true,
+                    "title": "Link to code line",
+                    "url": "${git_proj_url:value}/${__data.fields.Module}.py#L${__data.fields[\"# Line\"]:value}"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Log"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 988
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Traceback"
+            },
+            "properties": [
+              {
+                "id": "custom.minWidth",
+                "value": 300
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 12,
+        "w": 24,
+        "x": 0,
+        "y": 12
+      },
+      "id": 1,
+      "options": {
+        "cellHeight": "sm",
+        "footer": {
+          "countRows": true,
+          "fields": [],
+          "reducer": [
+            "count"
+          ],
+          "show": true
+        },
+        "showHeader": true,
+        "sortBy": [
+          {
+            "desc": false,
+            "displayName": "Log"
+          }
+        ]
+      },
+      "pluginVersion": "10.3.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "e1cebbce-2db5-4db6-b00d-2d786c80808b"
+          },
+          "editorMode": "code",
+          "expr": "{application=\"TM\"} |~ `\"level\": \"$log_level\"` # |~ `\"line\": \"$log_regex\"`",
+          "maxLines": 5000,
+          "queryType": "range",
+          "refId": "A"
+        }
+      ],
+      "title": "[top = most recent] - Loki/Loguru",
+      "transformations": [
+        {
+          "id": "sortBy",
+          "options": {
+            "fields": {},
+            "sort": [
+              {
+                "desc": true,
+                "field": "Time"
+              }
+            ]
+          }
+        },
+        {
+          "id": "extractFields",
+          "options": {
+            "format": "kvp",
+            "keepTime": false,
+            "replace": false,
+            "source": "Line"
+          }
+        },
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {
+              "Line": true,
+              "Time": false,
+              "file": true,
+              "id": true,
+              "labels": true,
+              "message": false,
+              "module": false,
+              "name": true,
+              "path": true,
+              "process": true,
+              "thread": true,
+              "timestamp": true,
+              "tsNs": true
+            },
+            "includeByName": {},
+            "indexByName": {
+              "Line": 0,
+              "Time": 10,
+              "file": 7,
+              "function": 13,
+              "id": 4,
+              "labels": 1,
+              "level": 11,
+              "line": 14,
+              "message": 15,
+              "module": 12,
+              "name": 9,
+              "path": 8,
+              "process": 5,
+              "stacktrace": 16,
+              "thread": 6,
+              "timestamp": 3,
+              "tsNs": 2
+            },
+            "renameByName": {
+              "Line": "",
+              "Time": "Timestamp",
+              "function": "Function",
+              "level": "Level",
+              "line": "# Line",
+              "message": "Log",
+              "module": "Module",
+              "stacktrace": "Traceback",
+              "timestamp": ""
+            }
+          }
+        }
+      ],
+      "type": "table"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 24
+      },
+      "id": 21,
+      "panels": [],
+      "title": "Copy tracking",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "e06497e3-42b8-4a19-8b1a-2d2ed835b209"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "filterable": true,
+            "inspect": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unitScale": true
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": ".*Time.*"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "time: MM/DD HH:mm:ss.SSS"
+              },
+              {
+                "id": "custom.minWidth",
+                "value": 150
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": ".*Lots.*"
+            },
+            "properties": [
+              {
+                "id": "custom.minWidth",
+                "value": 100
+              },
+              {
+                "id": "decimals",
+                "value": 2
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": ".*Price.*"
+            },
+            "properties": [
+              {
+                "id": "custom.minWidth",
+                "value": 80
+              },
+              {
+                "id": "decimals",
+                "value": 5
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": ".*(Symbol|T#).*"
+            },
+            "properties": [
+              {
+                "id": "custom.minWidth",
+                "value": 100
+              },
+              {
+                "id": "custom.align",
+                "value": "center"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Comment"
+            },
+            "properties": [
+              {
+                "id": "custom.minWidth",
+                "value": 500
+              },
+              {
+                "id": "displayName",
+                "value": "Comment from source"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": ".*Acc.*"
+            },
+            "properties": [
+              {
+                "id": "custom.minWidth",
+                "value": 140
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Order"
+            },
+            "properties": [
+              {
+                "id": "custom.align",
+                "value": "center"
+              },
+              {
+                "id": "custom.width",
+                "value": 50
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 12,
+        "w": 24,
+        "x": 0,
+        "y": 25
+      },
+      "id": 19,
+      "options": {
+        "cellHeight": "sm",
+        "footer": {
+          "countRows": true,
+          "fields": [
+            "ticket"
+          ],
+          "reducer": [
+            "count"
+          ],
+          "show": true
+        },
+        "showHeader": true
+      },
+      "pluginVersion": "10.3.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-postgresql-datasource",
+            "uid": "e06497e3-42b8-4a19-8b1a-2d2ed835b209"
+          },
+          "editorMode": "code",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "WITH trades AS ( SELECT *, t_entry / 1e3 AS ts_entry, t_entry_s / 1e3 AS ts_entry_s\r\n    FROM tc_trades_active ORDER BY alias_s, ticket_s, alias\r\n), accounts_s AS ( SELECT alias AS acc_s, id AS id_s, owner AS owner_s,\r\n    ${map_server:text}_s FROM tc_accounts WHERE (category = 0)\r\n), accounts_t AS ( SELECT alias AS acc_t, id AS id_t, owner AS owner_t,\r\n    ${map_server:text}_t FROM tc_accounts WHERE (category = 1)\r\n), trades_s AS ( SELECT *, format('%s %s (\"%s\")', server_s, id_s, owner_s) AS acc_s2\r\n    FROM trades INNER JOIN accounts_s ON trades.alias_s = accounts_s.acc_s\r\n), trades_t AS ( SELECT *, format('%s %s (\"%s\")', server_t, id_t, owner_t) AS acc_t2\r\n    FROM trades_s INNER JOIN accounts_t ON trades_s.alias = accounts_t.acc_t\r\n)\r\nSELECT * FROM trades_t",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          },
+          "table": "tc_trades_active"
+        }
+      ],
+      "title": "Currently active positions",
+      "transformations": [
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {
+              "acc_s": true,
+              "acc_t": true,
+              "alias": true,
+              "alias_s": true,
+              "id_s": true,
+              "id_t": true,
+              "owner_s": true,
+              "owner_t": true,
+              "server_s": true,
+              "server_t": true,
+              "t_entry": true,
+              "t_entry_s": true
+            },
+            "includeByName": {},
+            "indexByName": {
+              "acc_s": 17,
+              "acc_s2": 2,
+              "acc_t": 21,
+              "acc_t2": 3,
+              "alias": 1,
+              "alias_s": 0,
+              "comment": 16,
+              "id_s": 18,
+              "id_t": 22,
+              "lots": 11,
+              "lots_s": 10,
+              "order_type": 9,
+              "owner_s": 19,
+              "owner_t": 23,
+              "p_entry": 15,
+              "p_entry_s": 14,
+              "server_s": 20,
+              "server_t": 24,
+              "symbol": 8,
+              "t_entry": 13,
+              "t_entry_s": 12,
+              "ticket": 7,
+              "ticket_s": 6,
+              "ts_entry": 5,
+              "ts_entry_s": 4
+            },
+            "renameByName": {
+              "acc_s2": "Acc, source",
+              "acc_t2": "Acc, target",
+              "alias": "",
+              "alias_s": "",
+              "comment": "Comment",
+              "lots": "Lots, target",
+              "lots_s": "Lots, source",
+              "order_type": "Order",
+              "p_entry": "Price, target",
+              "p_entry_s": "Price, source",
+              "symbol": "Symbol",
+              "t_entry": "",
+              "t_entry_s": "",
+              "ticket": "T#, target",
+              "ticket_s": "T#, source",
+              "ts_entry": "Time, target",
+              "ts_entry_s": "Time, source"
+            }
+          }
+        }
+      ],
+      "type": "table"
+    },
+    {
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "e06497e3-42b8-4a19-8b1a-2d2ed835b209"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "filterable": true,
+            "inspect": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unitScale": true
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": ".*Time.*"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "time: MM/DD HH:mm:ss.SSS"
+              },
+              {
+                "id": "custom.minWidth",
+                "value": 150
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": ".*Lots.*"
+            },
+            "properties": [
+              {
+                "id": "custom.minWidth",
+                "value": 100
+              },
+              {
+                "id": "decimals",
+                "value": 2
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": ".*Price.*"
+            },
+            "properties": [
+              {
+                "id": "custom.minWidth",
+                "value": 100
+              },
+              {
+                "id": "decimals",
+                "value": 5
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": ".*(Symbol|T#).*"
+            },
+            "properties": [
+              {
+                "id": "custom.minWidth",
+                "value": 100
+              },
+              {
+                "id": "custom.align",
+                "value": "center"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Comment"
+            },
+            "properties": [
+              {
+                "id": "custom.minWidth",
+                "value": 500
+              },
+              {
+                "id": "displayName",
+                "value": "Comment from source"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": ".*Acc.*"
+            },
+            "properties": [
+              {
+                "id": "custom.minWidth",
+                "value": 140
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Order"
+            },
+            "properties": [
+              {
+                "id": "custom.align",
+                "value": "center"
+              },
+              {
+                "id": "custom.width",
+                "value": 50
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^Delay.*"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "µs"
+              },
+              {
+                "id": "custom.minWidth",
+                "value": 90
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^Slip.*"
+            },
+            "properties": [
+              {
+                "id": "custom.minWidth",
+                "value": 75
+              },
+              {
+                "id": "unit",
+                "value": "sci"
+              },
+              {
+                "id": "decimals",
+                "value": 0
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 12,
+        "w": 24,
+        "x": 0,
+        "y": 37
+      },
+      "id": 27,
+      "options": {
+        "cellHeight": "sm",
+        "footer": {
+          "countRows": true,
+          "fields": [
+            "ticket"
+          ],
+          "reducer": [
+            "count"
+          ],
+          "show": true
+        },
+        "showHeader": true,
+        "sortBy": [
+          {
+            "desc": false,
+            "displayName": "Acc, target"
+          }
+        ]
+      },
+      "pluginVersion": "10.3.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-postgresql-datasource",
+            "uid": "e06497e3-42b8-4a19-8b1a-2d2ed835b209"
+          },
+          "editorMode": "code",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "WITH trades AS ( SELECT (t_entry / 1e3) AS ts_entry, (t_exit_s / 1e3) AS ts_exit,\r\n        (t_entry - t_entry_s) AS dt_entry, (t_exit - t_exit_s) AS dt_exit,\r\n        (p_entry - p_entry_s) AS dp_entry, (p_exit - p_exit_s) AS dp_exit,\r\n        alias_s, alias, ticket_s, ticket, symbol, order_type, lots, comment\r\n    FROM tc_trades_closed WHERE $__unixEpochFilter(t_exit / 1e6)\r\n    ORDER BY alias_s, ticket_s, alias\r\n), accounts_s AS ( SELECT alias AS acc_s, id AS id_s, owner AS owner_s,\r\n    ${map_server:text}_s FROM tc_accounts WHERE (category = 0)\r\n), accounts_t AS ( SELECT alias AS acc_t, id AS id_t, owner AS owner_t,\r\n    ${map_server:text}_t FROM tc_accounts WHERE (category = 1)\r\n), trades_s AS ( SELECT *, format('%s %s (\"%s\")', server_s, id_s, owner_s) AS acc_s2\r\n    FROM trades INNER JOIN accounts_s ON trades.alias_s = accounts_s.acc_s\r\n), trades_t AS ( SELECT *, format('%s %s (\"%s\")', server_t, id_t, owner_t) AS acc_t2\r\n    FROM trades_s INNER JOIN accounts_t ON trades_s.alias = accounts_t.acc_t\r\n)\r\nSELECT * FROM trades_t",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          },
+          "table": "tc_trades_active"
+        }
+      ],
+      "title": "Recently closed positions",
+      "transformations": [
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {
+              "acc_s": true,
+              "acc_t": true,
+              "alias": true,
+              "alias_s": true,
+              "exit": true,
+              "exit_s": true,
+              "id_s": true,
+              "id_t": true,
+              "owner_s": true,
+              "owner_t": true,
+              "p_entry": true,
+              "p_entry_s": true,
+              "server_s": true,
+              "server_t": true,
+              "t_entry": true,
+              "t_entry_s": true,
+              "t_exit": true,
+              "t_exit_s": true,
+              "ticket": false
+            },
+            "includeByName": {},
+            "indexByName": {
+              "acc_s": 16,
+              "acc_s2": 2,
+              "acc_t": 20,
+              "acc_t2": 3,
+              "alias": 1,
+              "alias_s": 0,
+              "comment": 15,
+              "dp_entry": 13,
+              "dp_exit": 14,
+              "dt_entry": 11,
+              "dt_exit": 12,
+              "id_s": 17,
+              "id_t": 21,
+              "lots": 10,
+              "order_type": 9,
+              "owner_s": 18,
+              "owner_t": 22,
+              "server_s": 19,
+              "server_t": 23,
+              "symbol": 8,
+              "ticket": 7,
+              "ticket_s": 6,
+              "ts_entry": 4,
+              "ts_exit": 5
+            },
+            "renameByName": {
+              "acc_s2": "Acc, source",
+              "acc_t2": "Acc, target",
+              "alias": "",
+              "alias_s": "",
+              "comment": "Comment",
+              "d_entry": "Delay, in",
+              "d_exit": "Delay, out",
+              "dp_entry": "Slip, in",
+              "dp_exit": "Slip, out",
+              "dt_entry": "Delay, in",
+              "dt_exit": "Delay, out",
+              "exit": "",
+              "lots": "Lots, target",
+              "lots_s": "Lots, source",
+              "order_type": "Order",
+              "p_entry": "Price, target",
+              "p_entry_s": "Price, source",
+              "p_exit_s": "",
+              "symbol": "Symbol",
+              "t_entry": "",
+              "t_entry_s": "",
+              "t_exit": "",
+              "ticket": "T#, target",
+              "ticket_s": "T#, source",
+              "ts_entry": "Time, in",
+              "ts_entry_s": "Time",
+              "ts_exit": "Time, out",
+              "ts_exit_s": "Time, exit"
+            }
+          }
+        },
+        {
+          "id": "sortBy",
+          "options": {
+            "fields": {},
+            "sort": [
+              {
+                "desc": true,
+                "field": "Time, out"
+              }
+            ]
+          }
+        }
+      ],
+      "type": "table"
+    },
+    {
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "e06497e3-42b8-4a19-8b1a-2d2ed835b209"
+      },
+      "description": "<h5>\n<b><u>Note</u>:</b> whenever there are no active orders copied from sources, this table will show the last valid order map. That is: copied orders may have been closed and still show up here. Will change that in the future.\n</h5>",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "yellow",
+            "mode": "fixed"
+          },
+          "custom": {
+            "align": "right",
+            "cellOptions": {
+              "type": "color-text"
+            },
+            "filterable": false,
+            "inspect": false,
+            "minWidth": 70
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unitScale": true
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "_s"
+            },
+            "properties": [
+              {
+                "id": "custom.minWidth",
+                "value": 180
+              },
+              {
+                "id": "custom.align",
+                "value": "left"
+              },
+              {
+                "id": "displayName",
+                "value": "Source \\ Target"
+              },
+              {
+                "id": "custom.cellOptions",
+                "value": {
+                  "type": "auto"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "_t"
+            },
+            "properties": [
+              {
+                "id": "custom.minWidth",
+                "value": 80
+              },
+              {
+                "id": "custom.cellOptions",
+                "value": {
+                  "type": "auto"
+                }
+              },
+              {
+                "id": "unit",
+                "value": "s"
+              },
+              {
+                "id": "decimals",
+                "value": 1
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 13,
+        "w": 24,
+        "x": 0,
+        "y": 49
+      },
+      "id": 20,
+      "options": {
+        "cellHeight": "sm",
+        "footer": {
+          "countRows": false,
+          "enablePagination": false,
+          "fields": "",
+          "reducer": [
+            "count"
+          ],
+          "show": true
+        },
+        "showHeader": true,
+        "sortBy": [
+          {
+            "desc": false,
+            "displayName": "... ago"
+          }
+        ]
+      },
+      "pluginVersion": "10.3.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-postgresql-datasource",
+            "uid": "e06497e3-42b8-4a19-8b1a-2d2ed835b209"
+          },
+          "editorMode": "code",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "WITH ordmap AS (\r\n    SELECT CAST(ROUND(t_entry_s / 1e6) AS INT) as t_ord, EXTRACT(EPOCH FROM CURRENT_TIMESTAMP)\r\n    AS t_now, alias_s, ticket_s, alias, ticket FROM tc_trades_active ORDER BY t_entry_s, alias\r\n), accounts_s AS ( SELECT alias AS alias_s, owner AS owner_s, id AS id_s\r\n    FROM tc_accounts WHERE (active = true) AND (category = 0)\r\n), accounts_t AS ( SELECT alias AS alias_t, owner AS owner_t, id AS id_t\r\n    FROM tc_accounts WHERE (active = true) AND (category = 1)\r\n), ordmap_s AS ( SELECT * FROM ordmap LEFT JOIN accounts_s\r\n    ON ordmap.alias_s = accounts_s.alias_s\r\n), ordmap_t AS ( SELECT * FROM ordmap_s LEFT JOIN accounts_t\r\n    ON ordmap_s.alias = accounts_t.alias_t\r\n)\r\nSELECT format('{\"_t\": %s, \"_s\": \"A#%s - T#%s\"}', t_now - t_ord, id_s, ticket_s) AS source,\r\n    id_t AS target, ticket AS ticket FROM ordmap_t ORDER BY id_t, t_ord\r\n",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          }
+        }
+      ],
+      "title": "Order mapping. Please read description ->",
+      "transformations": [
+        {
+          "disabled": true,
+          "id": "sortBy",
+          "options": {
+            "fields": {},
+            "sort": [
+              {
+                "desc": false,
+                "field": "target"
+              }
+            ]
+          }
+        },
+        {
+          "id": "groupingToMatrix",
+          "options": {
+            "columnField": "target",
+            "emptyValue": "null",
+            "rowField": "source",
+            "valueField": "ticket"
+          }
+        },
+        {
+          "id": "extractFields",
+          "options": {
+            "format": "json",
+            "jsonPaths": [],
+            "keepTime": false,
+            "replace": false,
+            "source": "source\\target"
+          }
+        },
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {
+              "source\\target": true
+            },
+            "includeByName": {},
+            "indexByName": {
+              "TM_POKE_T": 25,
+              "_s": 1,
+              "_t": 0,
+              "bbox01": 3,
+              "bbox02": 4,
+              "bbox03": 5,
+              "bbox04": 6,
+              "bbox05": 7,
+              "bbox06": 8,
+              "bbox07": 9,
+              "bbox08": 10,
+              "bbox09": 11,
+              "bbox10": 12,
+              "bbox12": 13,
+              "bbox15": 14,
+              "bbox16": 15,
+              "bbox17": 16,
+              "bbox18": 17,
+              "bbox19": 18,
+              "bbox20": 19,
+              "bbox21": 20,
+              "bbox22": 21,
+              "bbox23": 22,
+              "bbox24": 23,
+              "bbox25": 24,
+              "source\\target": 2
+            },
+            "renameByName": {
+              "_s": "source\\target",
+              "_t": "... ago"
+            }
+          }
+        }
+      ],
+      "type": "table"
+    },
+    {
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "e06497e3-42b8-4a19-8b1a-2d2ed835b209"
+      },
+      "description": "<h4><u>Likely inaccurate accounts</u>:</h4>\n<h5><ul><li>\"<b><u>TM_POKE_S</u></b>\" (source) and \"<b><u>TM_POKE_T</u></b>\" (target) are just test accounts. The latter follows the other sources as well, but might have other increases/decreases based on personal manual trades used as tests.\n</li><li><b>bbox<u>11</u></b> (101183): Doesn't connect (error: invalid account). Checked all XMGlobal MT5 servers (from 1 to 11) and the error persists.\n</li><li><b>bbox<u>14</u></b> (101972): Out of funds - not trading.\n</h5>",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": true,
+            "axisCenteredZero": true,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "axisSoftMax": 15,
+            "axisSoftMin": -15,
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 3,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "always",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "dashed+area"
+            }
+          },
+          "decimals": 0,
+          "fieldMinMax": false,
+          "mappings": [],
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "transparent",
+                "value": null
+              },
+              {
+                "color": "#ffffff",
+                "value": -0.01
+              },
+              {
+                "color": "transparent",
+                "value": 0.01
+              }
+            ]
+          },
+          "unit": "none",
+          "unitScale": true
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Source :: MyServer :: 100001 (\"Ali\")"
+            },
+            "properties": [
+              {
+                "id": "custom.lineWidth",
+                "value": 4
+              },
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "#ffffff",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 24,
+        "x": 0,
+        "y": 62
+      },
+      "id": 26,
+      "options": {
+        "legend": {
+          "calcs": [
+            "max",
+            "lastNotNull",
+            "diff"
+          ],
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true,
+          "sortBy": "Last *",
+          "sortDesc": false
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "10.3.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-postgresql-datasource",
+            "uid": "e06497e3-42b8-4a19-8b1a-2d2ed835b209"
+          },
+          "editorMode": "code",
+          "format": "time_series",
+          "hide": false,
+          "rawQuery": true,
+          "rawSql": "WITH timeseries AS ( SELECT n_ord_buy + n_ord_sell AS series,\r\n        (timestamp / 1e6) as time, alias FROM tc_timeseries\r\n    WHERE $__unixEpochFilter(timestamp / 1e6)\r\n), accounts AS ( SELECT alias, id, owner,\r\n        ${map_category:text}, ${map_server:text}\r\n    FROM tc_accounts WHERE (active = true)\r\n        AND (category = 0)\r\n), merged AS ( SELECT series,\r\n        ${map_metric:text}, time\r\n    FROM timeseries INNER JOIN accounts\r\n    ON timeseries.alias = accounts.alias\r\n    ORDER BY time\r\n)\r\nSELECT * FROM merged",
+          "refId": "B",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          }
+        },
+        {
+          "datasource": {
+            "type": "grafana-postgresql-datasource",
+            "uid": "e06497e3-42b8-4a19-8b1a-2d2ed835b209"
+          },
+          "editorMode": "code",
+          "format": "time_series",
+          "hide": false,
+          "rawQuery": true,
+          "rawSql": "WITH timeseries AS ( SELECT n_cop_buy + n_cop_sell AS series,\r\n        (timestamp / 1e6) as time, alias FROM tc_timeseries\r\n    WHERE $__unixEpochFilter(timestamp / 1e6)\r\n), accounts AS ( SELECT alias, id, owner,\r\n        ${map_category:text}, ${map_server:text}\r\n    FROM tc_accounts WHERE (active = true)\r\n        AND (category = 1)\r\n), merged AS ( SELECT series,\r\n        ${map_metric:text}, time\r\n    FROM timeseries INNER JOIN accounts\r\n    ON timeseries.alias = accounts.alias\r\n    ORDER BY time\r\n)\r\nSELECT * FROM merged",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          }
+        },
+        {
+          "datasource": {
+            "type": "grafana-postgresql-datasource",
+            "uid": "e06497e3-42b8-4a19-8b1a-2d2ed835b209"
+          },
+          "editorMode": "code",
+          "format": "time_series",
+          "hide": true,
+          "rawQuery": true,
+          "rawSql": "WITH timeseries AS ( SELECT n_ord_buy + n_ord_sell AS series,\r\n        (timestamp / 1e6) as time, alias FROM tc_timeseries\r\n    WHERE $__unixEpochFilter(timestamp / 1e6)\r\n), accounts AS ( SELECT alias, id, owner,\r\n        ${map_category:text}, ${map_server:text}\r\n    FROM tc_accounts_test WHERE (active = true)\r\n        AND (category = 0)\r\n), merged AS ( SELECT series,\r\n        ${map_metric:text}, time\r\n    FROM timeseries INNER JOIN accounts\r\n    ON timeseries.alias = accounts.alias\r\n    ORDER BY time\r\n)\r\nSELECT * FROM merged",
+          "refId": "C",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          }
+        },
+        {
+          "datasource": {
+            "type": "grafana-postgresql-datasource",
+            "uid": "e06497e3-42b8-4a19-8b1a-2d2ed835b209"
+          },
+          "editorMode": "code",
+          "format": "time_series",
+          "hide": true,
+          "rawQuery": true,
+          "rawSql": "WITH timeseries AS ( SELECT n_cop_buy + n_cop_sell AS series,\r\n        (timestamp / 1e6) as time, alias FROM tc_timeseries\r\n    WHERE $__unixEpochFilter(timestamp / 1e6)\r\n), accounts AS ( SELECT alias, id, owner,\r\n        ${map_category:text}, ${map_server:text}\r\n    FROM tc_accounts_test WHERE (active = true)\r\n        AND (category = 1)\r\n), merged AS ( SELECT series,\r\n        ${map_metric:text}, time\r\n    FROM timeseries INNER JOIN accounts\r\n    ON timeseries.alias = accounts.alias\r\n    ORDER BY time\r\n)\r\nSELECT * FROM merged",
+          "refId": "D",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          }
+        }
+      ],
+      "title": "(NEW) Trade count - buys + sells - ONLY COPIED!",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "e06497e3-42b8-4a19-8b1a-2d2ed835b209"
+      },
+      "description": "<h5>Likely inaccurate accounts\n<ul><li>\"<b><u>TM_POKE_S</u></b>\" (source) and \"<b><u>TM_POKE_T</u></b>\" (target) are just test accounts. The latter follows the other sources as well, but might have other increases/decreases based on personal manual trades used as tests.\n</li><li><b>bbox<u>06</u></b> (101411): Had a notable bunch of old orders which came from before TradeManager. This implied a large initial exposure, so the account reached \"max net lot\" condition early in time and avoided some orders. \n</li><li><b>bbox<u>11</u></b> (101183): Doesn't connect (error: invalid account). Well, now (2024-03-20) does.\n</li><li><b>bbox<u>12</u></b> (101185): Same as \"<b>bbox06 (101411)</b>\" above.\n</li><li><b>bbox<u>13</u></b> (101447): Formerly a netting account. Keep in mind: netting accounts group trades from resulting orders together by symbol and average open price. Therefore, the only ticket that remains valid in the order history is the first one of that symbol. As order-close operations are triggered by ticket number and most of them disappear from registry, the order counter never actually lowers down until all trades from such symbol are closed. Hence, such growth.\n</li><li><b>bbox<u>14</u></b> (101972): Out of funds - not trading.\n</li><li>Checked all XMGlobal MT5 servers (from 1 to 11) and the error persists for XM accounts.\n</li></ul>",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": true,
+            "axisCenteredZero": true,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "axisSoftMax": 15,
+            "axisSoftMin": -15,
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 3,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "always",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "dashed+area"
+            }
+          },
+          "decimals": 0,
+          "fieldMinMax": false,
+          "mappings": [],
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "transparent",
+                "value": null
+              },
+              {
+                "color": "#ffffff",
+                "value": -0.01
+              },
+              {
+                "color": "transparent",
+                "value": 0.01
+              }
+            ]
+          },
+          "unit": "none",
+          "unitScale": true
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Source :: MyServer :: 100001 (\"Ali\")"
+            },
+            "properties": [
+              {
+                "id": "custom.lineWidth",
+                "value": 4
+              },
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "#ffffff",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 24,
+        "x": 0,
+        "y": 69
+      },
+      "id": 29,
+      "options": {
+        "legend": {
+          "calcs": [
+            "max",
+            "lastNotNull",
+            "diff"
+          ],
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true,
+          "sortBy": "Last *",
+          "sortDesc": false
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "10.3.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-postgresql-datasource",
+            "uid": "e06497e3-42b8-4a19-8b1a-2d2ed835b209"
+          },
+          "editorMode": "code",
+          "format": "time_series",
+          "hide": false,
+          "rawQuery": true,
+          "rawSql": "WITH timeseries AS ( SELECT n_ord_buy + n_ord_sell AS series,\r\n        (timestamp / 1e6) as time, alias FROM tc_timeseries\r\n    WHERE $__unixEpochFilter(timestamp / 1e6)\r\n), accounts AS ( SELECT alias, id, owner,\r\n        ${map_category:text}, ${map_server:text}\r\n    FROM tc_accounts WHERE (active = true)\r\n        AND (category = 0)\r\n), merged AS ( SELECT series,\r\n        ${map_metric:text}, time\r\n    FROM timeseries INNER JOIN accounts\r\n    ON timeseries.alias = accounts.alias\r\n    ORDER BY time\r\n)\r\nSELECT * FROM merged",
+          "refId": "B",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          }
+        },
+        {
+          "datasource": {
+            "type": "grafana-postgresql-datasource",
+            "uid": "e06497e3-42b8-4a19-8b1a-2d2ed835b209"
+          },
+          "editorMode": "code",
+          "format": "time_series",
+          "hide": false,
+          "rawQuery": true,
+          "rawSql": "WITH timeseries AS ( SELECT n_ord_buy + n_ord_sell AS series,\r\n        (timestamp / 1e6) as time, alias FROM tc_timeseries\r\n    WHERE $__unixEpochFilter(timestamp / 1e6)\r\n), accounts AS ( SELECT alias, id, owner,\r\n        ${map_category:text}, ${map_server:text}\r\n    FROM tc_accounts WHERE (active = true)\r\n        AND (category = 1)\r\n), merged AS ( SELECT series,\r\n        ${map_metric:text}, time\r\n    FROM timeseries INNER JOIN accounts\r\n    ON timeseries.alias = accounts.alias\r\n    ORDER BY time\r\n)\r\nSELECT * FROM merged",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          }
+        },
+        {
+          "datasource": {
+            "type": "grafana-postgresql-datasource",
+            "uid": "e06497e3-42b8-4a19-8b1a-2d2ed835b209"
+          },
+          "editorMode": "code",
+          "format": "time_series",
+          "hide": true,
+          "rawQuery": true,
+          "rawSql": "WITH timeseries AS ( SELECT n_ord_buy + n_ord_sell AS series,\r\n        (timestamp / 1e6) as time, alias FROM tc_timeseries\r\n    WHERE $__unixEpochFilter(timestamp / 1e6)\r\n), accounts AS ( SELECT alias, id, owner,\r\n        ${map_category:text}, ${map_server:text}\r\n    FROM tc_accounts_test WHERE (active = true)\r\n        AND (category = 0)\r\n), merged AS ( SELECT series,\r\n        ${map_metric:text}, time\r\n    FROM timeseries INNER JOIN accounts\r\n    ON timeseries.alias = accounts.alias\r\n    ORDER BY time\r\n)\r\nSELECT * FROM merged",
+          "refId": "C",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          }
+        },
+        {
+          "datasource": {
+            "type": "grafana-postgresql-datasource",
+            "uid": "e06497e3-42b8-4a19-8b1a-2d2ed835b209"
+          },
+          "editorMode": "code",
+          "format": "time_series",
+          "hide": true,
+          "rawQuery": true,
+          "rawSql": "WITH timeseries AS ( SELECT n_cop_buy + n_cop_sell AS series,\r\n        (timestamp / 1e6) as time, alias FROM tc_timeseries\r\n    WHERE $__unixEpochFilter(timestamp / 1e6)\r\n), accounts AS ( SELECT alias, id, owner,\r\n        ${map_category:text}, ${map_server:text}\r\n    FROM tc_accounts_test WHERE (active = true)\r\n        AND (category = 1)\r\n), merged AS ( SELECT series,\r\n        ${map_metric:text}, time\r\n    FROM timeseries INNER JOIN accounts\r\n    ON timeseries.alias = accounts.alias\r\n    ORDER BY time\r\n)\r\nSELECT * FROM merged",
+          "refId": "D",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          }
+        }
+      ],
+      "title": "(NEW) Trade count - buys + sells - all of them",
+      "type": "timeseries"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 76
+      },
+      "id": 13,
+      "panels": [],
+      "title": "State variables",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "e06497e3-42b8-4a19-8b1a-2d2ed835b209"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "purple",
+            "mode": "fixed"
+          },
+          "decimals": 1,
+          "fieldMinMax": false,
+          "mappings": [],
+          "min": -1,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "currencyUSD",
+          "unitScale": false
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 24,
+        "x": 0,
+        "y": 77
+      },
+      "id": 28,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "limit": 50,
+          "values": true
+        },
+        "showPercentChange": false,
+        "text": {
+          "titleSize": 12,
+          "valueSize": 32
+        },
+        "textMode": "value_and_name",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.3.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-postgresql-datasource",
+            "uid": "e06497e3-42b8-4a19-8b1a-2d2ed835b209"
+          },
+          "editorMode": "code",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "/* CREATE OR REPLACE FUNCTION remove1() RETURNS text AS\r\n$$ BEGIN RETURN 'Source :: |Target :: |\\(.*\\)'; END;\r\n$$ LANGUAGE plpgsql; */\r\n\r\nWITH timeseries AS ( SELECT DISTINCT ON (alias)\r\n        alias, balance AS series FROM tc_timeseries\r\n        ORDER BY alias, timestamp DESC\r\n), accounts AS ( SELECT alias, id, owner,\r\n        ${map_category:text}, ${map_server:text}\r\n    FROM tc_accounts WHERE (active = true)\r\n), merged AS ( SELECT series, ${map_metric:text}\r\n    FROM timeseries INNER JOIN accounts\r\n    ON timeseries.alias = accounts.alias\r\n), parsed AS (\r\n    SELECT series, regexp_replace(metric, remove1(), '', 'g') AS metric FROM merged\r\n)\r\n    SELECT series, regexp_replace(metric, ' :: ', ' ', 'g') AS metric FROM parsed\r\n",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          }
+        }
+      ],
+      "title": "Current account balances",
+      "transformations": [
+        {
+          "id": "sortBy",
+          "options": {
+            "fields": {},
+            "sort": [
+              {
+                "field": "regexp_replace"
+              }
+            ]
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "e06497e3-42b8-4a19-8b1a-2d2ed835b209"
+      },
+      "description": "<h5>Profit shown is \"<font color = \"yellow\">realized</font> (rPNL)\". This one is good for tracking alongside the MT5 history reports</h5>",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": true,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 3,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "always",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "dashed+area"
+            }
+          },
+          "decimals": 1,
+          "fieldMinMax": true,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "transparent",
+                "value": null
+              },
+              {
+                "color": "#ffffff",
+                "value": -0.0001
+              },
+              {
+                "color": "transparent",
+                "value": 0.0001
+              }
+            ]
+          },
+          "unit": "currencyUSD",
+          "unitScale": true
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 24,
+        "x": 0,
+        "y": 86
+      },
+      "id": 11,
+      "options": {
+        "legend": {
+          "calcs": [
+            "min",
+            "max",
+            "lastNotNull"
+          ],
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "10.3.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-postgresql-datasource",
+            "uid": "e06497e3-42b8-4a19-8b1a-2d2ed835b209"
+          },
+          "editorMode": "code",
+          "format": "time_series",
+          "rawQuery": true,
+          "rawSql": "WITH timeseries AS ( SELECT balance AS series,\r\n        (timestamp / 1e6) as time, alias FROM tc_timeseries\r\n    WHERE $__unixEpochFilter(timestamp / 1e6)\r\n), accounts AS ( SELECT alias, id, owner,\r\n        ${map_category:text}, ${map_server:text}\r\n    FROM tc_accounts WHERE (active = true)\r\n), merged AS ( SELECT series,\r\n        ${map_metric:text}, time\r\n    FROM timeseries INNER JOIN accounts\r\n    ON timeseries.alias = accounts.alias\r\n    ORDER BY time\r\n)\r\nSELECT time, metric, series - FIRST_VALUE(series) OVER (PARTITION BY metric ORDER BY time) FROM merged ORDER BY time",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          }
+        }
+      ],
+      "title": "Window-based realized profit per account, and total",
+      "transformations": [
+        {
+          "id": "calculateField",
+          "options": {
+            "alias": "Net profit, black-box",
+            "mode": "reduceRow",
+            "reduce": {
+              "include": [
+                "Target \"bbox01\" (MyServerGlobal-Server)",
+                "Target \"bbox02\" (MyServerGlobal-Server)",
+                "Target \"bbox03\" (MyServerGlobal-Server)",
+                "Target \"bbox04\" (MyServerGlobal-Server)",
+                "Target \"bbox05\" (MyServerGlobal-Server)"
+              ],
+              "reducer": "sum"
+            },
+            "replaceFields": false
+          }
+        }
+      ],
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "e06497e3-42b8-4a19-8b1a-2d2ed835b209"
+      },
+      "description": "<h5>Profit shown is net per account:\n<br>\"<font color = \"yellow\">realized</font> (rPNL)\" + \"<font color = \"yellow\">unrealized</font> (uPNL)\"",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": true,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 3,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "always",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "dashed+area"
+            }
+          },
+          "decimals": 1,
+          "fieldMinMax": true,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "transparent",
+                "value": null
+              },
+              {
+                "color": "#ffffff",
+                "value": -0.001
+              },
+              {
+                "color": "transparent",
+                "value": 0.001
+              }
+            ]
+          },
+          "unit": "currencyUSD",
+          "unitScale": true
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 24,
+        "x": 0,
+        "y": 93
+      },
+      "id": 17,
+      "options": {
+        "legend": {
+          "calcs": [
+            "min",
+            "max",
+            "lastNotNull"
+          ],
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "10.3.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-postgresql-datasource",
+            "uid": "e06497e3-42b8-4a19-8b1a-2d2ed835b209"
+          },
+          "editorMode": "code",
+          "format": "time_series",
+          "rawQuery": true,
+          "rawSql": "WITH timeseries AS ( SELECT equity AS series,\r\n        (timestamp / 1e6) as time, alias FROM tc_timeseries\r\n    WHERE $__unixEpochFilter(timestamp / 1e6)\r\n), accounts AS ( SELECT alias, id, owner,\r\n        ${map_category:text}, ${map_server:text}\r\n    FROM tc_accounts WHERE (active = true)\r\n), merged AS ( SELECT series,\r\n        ${map_metric:text}, time\r\n    FROM timeseries INNER JOIN accounts\r\n    ON timeseries.alias = accounts.alias\r\n    ORDER BY time\r\n)\r\nSELECT time, metric, series - FIRST_VALUE(series) OVER (PARTITION BY metric ORDER BY time) FROM merged ORDER BY time",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          }
+        }
+      ],
+      "title": "Window-based net profit per account, and total",
+      "transformations": [
+        {
+          "id": "calculateField",
+          "options": {
+            "alias": "Net profit, black-box",
+            "mode": "reduceRow",
+            "reduce": {
+              "include": [
+                "Target \"bbox01\" (MyServerGlobal-Server)",
+                "Target \"bbox02\" (MyServerGlobal-Server)",
+                "Target \"bbox03\" (MyServerGlobal-Server)",
+                "Target \"bbox04\" (MyServerGlobal-Server)",
+                "Target \"bbox05\" (MyServerGlobal-Server)"
+              ],
+              "reducer": "sum"
+            },
+            "replaceFields": false
+          }
+        }
+      ],
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "e06497e3-42b8-4a19-8b1a-2d2ed835b209"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": true,
+            "axisCenteredZero": true,
+            "axisColorMode": "text",
+            "axisGridShow": true,
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "axisSoftMax": 0.01,
+            "axisSoftMin": -0.01,
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 3,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "always",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "dashed+area"
+            }
+          },
+          "decimals": 1,
+          "fieldMinMax": false,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#ff0000",
+                "value": null
+              },
+              {
+                "color": "transparent",
+                "value": -1
+              },
+              {
+                "color": "#ffffff",
+                "value": -0.001
+              },
+              {
+                "color": "transparent",
+                "value": 0.001
+              },
+              {
+                "color": "#ff0000",
+                "value": 1
+              }
+            ]
+          },
+          "unit": "percentunit",
+          "unitScale": true
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 24,
+        "x": 0,
+        "y": 100
+      },
+      "id": 12,
+      "options": {
+        "legend": {
+          "calcs": [
+            "min",
+            "max",
+            "lastNotNull"
+          ],
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true,
+          "sortBy": "Name",
+          "sortDesc": false
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "10.3.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-postgresql-datasource",
+            "uid": "e06497e3-42b8-4a19-8b1a-2d2ed835b209"
+          },
+          "editorMode": "code",
+          "format": "time_series",
+          "rawQuery": true,
+          "rawSql": "WITH timeseries AS ( SELECT lots_net AS series,\r\n        (timestamp / 1e6) as time, alias FROM tc_timeseries\r\n    WHERE $__unixEpochFilter(timestamp / 1e6)\r\n), accounts AS ( SELECT alias, id, owner, max_lots_net,\r\n        ${map_category:text}, ${map_server:text}\r\n    FROM tc_accounts WHERE (active = true)\r\n), merged AS ( SELECT series / max_lots_net AS series,\r\n        ${map_metric:text}, time\r\n    FROM timeseries INNER JOIN accounts\r\n    ON timeseries.alias = accounts.alias\r\n    ORDER BY time\r\n)\r\nSELECT * FROM merged",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          }
+        }
+      ],
+      "title": "Current-to-max net lot ratio",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "e06497e3-42b8-4a19-8b1a-2d2ed835b209"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": true,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 3,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "always",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "dashed+area"
+            }
+          },
+          "decimals": 1,
+          "fieldMinMax": true,
+          "mappings": [],
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "transparent",
+                "value": null
+              },
+              {
+                "color": "#ffffff",
+                "value": -0.001
+              },
+              {
+                "color": "transparent",
+                "value": 0.001
+              }
+            ]
+          },
+          "unit": "percentunit",
+          "unitScale": true
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 24,
+        "x": 0,
+        "y": 107
+      },
+      "id": 25,
+      "options": {
+        "legend": {
+          "calcs": [
+            "mean",
+            "max",
+            "lastNotNull"
+          ],
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "10.3.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-postgresql-datasource",
+            "uid": "e06497e3-42b8-4a19-8b1a-2d2ed835b209"
+          },
+          "editorMode": "code",
+          "format": "time_series",
+          "rawQuery": true,
+          "rawSql": "WITH timeseries AS ( SELECT margin / (equity + 1) AS series,\r\n        (timestamp / 1e6) as time, alias FROM tc_timeseries\r\n    WHERE $__unixEpochFilter(timestamp / 1e6)\r\n), accounts AS ( SELECT alias, id, owner,\r\n        ${map_category:text}, ${map_server:text}\r\n    FROM tc_accounts WHERE (active = true)\r\n), merged AS ( SELECT series,\r\n        ${map_metric:text}, time\r\n    FROM timeseries INNER JOIN accounts\r\n    ON timeseries.alias = accounts.alias\r\n    ORDER BY time\r\n)\r\nSELECT * FROM merged",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          }
+        }
+      ],
+      "title": "Margin consumption per account",
+      "transformations": [],
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "e06497e3-42b8-4a19-8b1a-2d2ed835b209"
+      },
+      "description": "<h5><b><u>Keep in mind</u></b>: the ratio between balance in thousands and max net lot size, should be more or less rounded around 2, except certain exceptions (accounts below 2k, accounts above 2M)</h5>",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "color-text"
+            },
+            "inspect": false,
+            "minWidth": 50
+          },
+          "decimals": 2,
+          "mappings": [
+            {
+              "options": {
+                "match": "null",
+                "result": {
+                  "color": "#ff0000",
+                  "index": 0,
+                  "text": "0"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#00ffff",
+                "value": null
+              },
+              {
+                "color": "#00ff00",
+                "value": 0
+              }
+            ]
+          },
+          "unitScale": true
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "source\\target"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "text",
+                  "mode": "fixed"
+                }
+              },
+              {
+                "id": "custom.minWidth",
+                "value": 120
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byType",
+              "options": "number"
+            },
+            "properties": [
+              {
+                "id": "custom.minWidth",
+                "value": 67
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 24,
+        "x": 0,
+        "y": 114
+      },
+      "id": 18,
+      "options": {
+        "cellHeight": "sm",
+        "footer": {
+          "countRows": false,
+          "fields": "",
+          "reducer": [
+            "sum"
+          ],
+          "show": false
+        },
+        "showHeader": true,
+        "sortBy": []
+      },
+      "pluginVersion": "10.3.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-postgresql-datasource",
+            "uid": "e06497e3-42b8-4a19-8b1a-2d2ed835b209"
+          },
+          "editorMode": "code",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "WITH mults AS (  SELECT source, target, factor\r\n    FROM tc_multipliers ORDER BY source, target\r\n), leverages AS (  SELECT DISTINCT ON (alias)\r\n        alias, leverage, round(balance / 100) / 10 AS b1000\r\n        FROM tc_timeseries ORDER BY alias, timestamp DESC\r\n), accounts_s AS (  SELECT alias AS alias_s,\r\n        format('%s (\"%s\")', id, owner) AS id_s\r\n    FROM tc_accounts WHERE (active = true)\r\n        AND (category = 0)\r\n), accounts_t AS (  SELECT alias AS alias_t,\r\n        format('%s (\"%s\")', id, owner) AS id_t\r\n    FROM tc_accounts WHERE (active = true)\r\n        AND (category = 1)\r\n), max_lots_net AS (  SELECT max_lots_net,\r\n        format('%s (\"%s\")', id, owner) AS id_t\r\n    FROM tc_accounts WHERE (active = true)\r\n        AND (category = 1)\r\n), mults_s AS (  SELECT * FROM mults INNER JOIN\r\n    accounts_s ON mults.source = accounts_s.alias_s\r\n), mults_t AS (  SELECT * FROM mults_s INNER JOIN\r\n    accounts_t ON mults_s.target = accounts_t.alias_t\r\n), merged AS ( SELECT * FROM leverages INNER JOIN\r\n    accounts_t ON leverages.alias = accounts_t.alias_t\r\n)\r\n\r\n(SELECT id_s AS source, id_t AS target, factor FROM mults_t ORDER BY target) UNION ALL\r\n(SELECT '*Leverage*' AS source, id_t as target, leverage FROM merged ORDER BY target) UNION ALL\r\n(SELECT '*Bal (x1000)*' AS source, id_t as target, b1000 FROM merged ORDER BY target) UNION ALL\r\n(SELECT '*Max net lot*' AS source, id_t as target, max_lots_net FROM max_lots_net ORDER BY target)",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [
+                  {
+                    "name": "source",
+                    "type": "functionParameter"
+                  }
+                ],
+                "type": "function"
+              },
+              {
+                "parameters": [
+                  {
+                    "name": "target",
+                    "type": "functionParameter"
+                  }
+                ],
+                "type": "function"
+              },
+              {
+                "parameters": [
+                  {
+                    "name": "factor",
+                    "type": "functionParameter"
+                  }
+                ],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          },
+          "table": "tc_multipliers"
+        }
+      ],
+      "title": "Account risk parameters: account details, source-target multipliers (positive) and fixed lot sizes (negative)",
+      "transformations": [
+        {
+          "id": "groupingToMatrix",
+          "options": {
+            "columnField": "target",
+            "emptyValue": "null",
+            "rowField": "source",
+            "valueField": "factor"
+          }
+        },
+        {
+          "id": "sortBy",
+          "options": {
+            "fields": {},
+            "sort": [
+              {
+                "desc": false,
+                "field": "source\\target"
+              }
+            ]
+          }
+        }
+      ],
+      "type": "table"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 122
+      },
+      "id": 3,
+      "panels": [],
+      "title": "Deviations",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "e06497e3-42b8-4a19-8b1a-2d2ed835b209"
+      },
+      "description": "<h4><b><u>Internal</u></b> = measured from trade manager's internal clock (<b>profiling</b>)</h4>",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisGridShow": true,
+            "axisLabel": "",
+            "axisPlacement": "left",
+            "barAlignment": 0,
+            "drawStyle": "points",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "always",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "decimals": 0,
+          "mappings": [],
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "µs",
+          "unitScale": true
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 0,
+        "y": 123
+      },
+      "id": 5,
+      "options": {
+        "legend": {
+          "calcs": [
+            "lastNotNull",
+            "min",
+            "mean",
+            "max",
+            "range"
+          ],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true,
+          "sortBy": "Name",
+          "sortDesc": false,
+          "width": 480
+        },
+        "timezone": [
+          "utc"
+        ],
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "10.3.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-postgresql-datasource",
+            "uid": "e06497e3-42b8-4a19-8b1a-2d2ed835b209"
+          },
+          "editorMode": "code",
+          "format": "time_series",
+          "rawQuery": true,
+          "rawSql": "SELECT metric, ts_resp as time,\r\n  delay_trg AS \"Executor :\",\r\n  delay_src AS \"Receiver :\",\r\n  delay_zmq AS \"ZMQ :\"\r\nFROM (  \r\n  SELECT metric, ts_resp,\r\n    AVG(t_resp - t_recv) AS delay_trg,\r\n    AVG(t_recv - t_send) AS delay_zmq,\r\n    AVG(t_send - t_sign) AS delay_src\r\n  FROM (\r\n    SELECT /*concat(action, ' : z=', nzmq::text, ' : ',\r\n          SUBSTRING(comment, POSITION('c' IN comment))\r\n        )*/ action AS metric, t_resp, t_recv, t_send, t_sign,\r\n      TO_TIMESTAMP(t_resp / 1e6) AT TIME ZONE 'UTC' AS ts_resp\r\n    FROM tc_responses\r\n    WHERE TO_TIMESTAMP(t_resp / 1e6) AT TIME ZONE 'UTC' BETWEEN $__timeFrom() AND $__timeTo()\r\n      AND (success = true) /*AND (comment ~ 'c=')*/\r\n  ) GROUP BY metric, ts_resp\r\n) ORDER BY time",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          }
+        }
+      ],
+      "title": "Delay, internal",
+      "transformations": [],
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "e06497e3-42b8-4a19-8b1a-2d2ed835b209"
+      },
+      "description": "<h4><b><u>External</u></b> = measured from resulting trade history provided by <b>MT5 API</b></h4>",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisGridShow": true,
+            "axisLabel": "",
+            "axisPlacement": "left",
+            "barAlignment": 0,
+            "drawStyle": "points",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 6,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "always",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "decimals": 0,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "µs",
+          "unitScale": true
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "CLOSE"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "#ff0000",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "OPEN"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "#0000ff",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 12,
+        "y": 123
+      },
+      "id": 23,
+      "options": {
+        "legend": {
+          "calcs": [
+            "lastNotNull",
+            "min",
+            "mean",
+            "max",
+            "range"
+          ],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true,
+          "sortBy": "Name",
+          "sortDesc": false,
+          "width": 480
+        },
+        "timezone": [
+          "utc"
+        ],
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "10.3.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-postgresql-datasource",
+            "uid": "e06497e3-42b8-4a19-8b1a-2d2ed835b209"
+          },
+          "editorMode": "code",
+          "format": "time_series",
+          "hide": false,
+          "rawQuery": true,
+          "rawSql": "SELECT time, format('%s : CLOSE', symbol) AS metric, delay FROM (\r\n  SELECT TO_TIMESTAMP(t_exit_s / 1e6) AT TIME ZONE 'UTC' AS time,\r\n  symbol, (t_exit - t_exit_s) AS delay FROM tc_trades_closed\r\n) WHERE time BETWEEN $__timeFrom() AND $__timeTo() ORDER BY time",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          }
+        },
+        {
+          "datasource": {
+            "type": "grafana-postgresql-datasource",
+            "uid": "e06497e3-42b8-4a19-8b1a-2d2ed835b209"
+          },
+          "editorMode": "code",
+          "format": "time_series",
+          "hide": false,
+          "rawQuery": true,
+          "rawSql": "SELECT time, format('%s : OPEN', symbol) AS metric, delay FROM (\r\n  SELECT TO_TIMESTAMP(t_entry_s / 1e6) AT TIME ZONE 'UTC' AS time,\r\n  symbol, (t_entry - t_entry_s) AS delay FROM tc_trades_closed\r\n) WHERE time BETWEEN $__timeFrom() AND $__timeTo() ORDER BY time",
+          "refId": "B",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          }
+        }
+      ],
+      "title": "Delay, external",
+      "transformations": [],
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "e06497e3-42b8-4a19-8b1a-2d2ed835b209"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisGridShow": true,
+            "axisLabel": "",
+            "axisPlacement": "left",
+            "barAlignment": 0,
+            "drawStyle": "points",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "always",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "decimals": 5,
+          "mappings": [],
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short",
+          "unitScale": true
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 0,
+        "y": 132
+      },
+      "id": 7,
+      "options": {
+        "legend": {
+          "calcs": [
+            "lastNotNull",
+            "min",
+            "mean",
+            "max"
+          ],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true,
+          "width": 480
+        },
+        "timezone": [
+          "utc"
+        ],
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "10.3.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-postgresql-datasource",
+            "uid": "e06497e3-42b8-4a19-8b1a-2d2ed835b209"
+          },
+          "editorMode": "code",
+          "format": "time_series",
+          "rawQuery": true,
+          "rawSql": "SELECT server || ' : ' || symbol AS metric,\r\n  abs(price_open - price_sign) AS price_diff,\r\n  TO_TIMESTAMP(t_resp / 1e6) AT TIME ZONE 'UTC' AS time\r\nFROM tc_responses\r\nWHERE TO_TIMESTAMP(t_resp / 1e6) AT TIME ZONE 'UTC' BETWEEN $__timeFrom() AND $__timeTo()\r\n  AND (order_type IN ('Buy', 'Sell')) AND (action ~ 'OPEN') AND (price_sign != 0)\r\nORDER BY time",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          }
+        }
+      ],
+      "title": "Slippage, internal",
+      "transformations": [],
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "e06497e3-42b8-4a19-8b1a-2d2ed835b209"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisGridShow": true,
+            "axisLabel": "",
+            "axisPlacement": "left",
+            "barAlignment": 0,
+            "drawStyle": "points",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 6,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "always",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "decimals": 5,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "none",
+          "unitScale": true
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "CLOSE"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "#ff0000",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "OPEN"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "#0000ff",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 12,
+        "y": 132
+      },
+      "id": 24,
+      "options": {
+        "legend": {
+          "calcs": [
+            "lastNotNull",
+            "min",
+            "mean",
+            "max",
+            "range"
+          ],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true,
+          "sortBy": "Name",
+          "sortDesc": false,
+          "width": 480
+        },
+        "timezone": [
+          "utc"
+        ],
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "10.3.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-postgresql-datasource",
+            "uid": "e06497e3-42b8-4a19-8b1a-2d2ed835b209"
+          },
+          "editorMode": "code",
+          "format": "time_series",
+          "hide": false,
+          "rawQuery": true,
+          "rawSql": "SELECT time, format('%s : CLOSE', symbol) AS metric, slippage FROM (\r\n  SELECT TO_TIMESTAMP(t_exit_s / 1e6) AT TIME ZONE 'UTC' AS time,\r\n  symbol, abs(p_exit - p_exit_s) AS slippage FROM tc_trades_closed\r\n) WHERE time BETWEEN $__timeFrom() AND $__timeTo() ORDER BY time",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          }
+        },
+        {
+          "datasource": {
+            "type": "grafana-postgresql-datasource",
+            "uid": "e06497e3-42b8-4a19-8b1a-2d2ed835b209"
+          },
+          "editorMode": "code",
+          "format": "time_series",
+          "hide": false,
+          "rawQuery": true,
+          "rawSql": "SELECT time, format('%s : OPEN', symbol) AS metric, slippage FROM (\r\n  SELECT TO_TIMESTAMP(t_entry_s / 1e6) AT TIME ZONE 'UTC' AS time,\r\n  symbol, abs(p_entry - p_entry_s) AS slippage FROM tc_trades_closed\r\n) WHERE time BETWEEN $__timeFrom() AND $__timeTo() ORDER BY time",
+          "refId": "B",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          }
+        }
+      ],
+      "title": "Slippage, external",
+      "transformations": [],
+      "type": "timeseries"
+    }
+  ],
+  "refresh": "10s",
+  "schemaVersion": 39,
+  "tags": [],
+  "templating": {
+    "list": [
+      {
+        "allValue": ".*",
+        "current": {
+          "selected": true,
+          "text": [
+            "ERROR"
+          ],
+          "value": [
+            "ERROR"
+          ]
+        },
+        "hide": 0,
+        "includeAll": true,
+        "label": "Log level",
+        "multi": true,
+        "name": "log_level",
+        "options": [
+          {
+            "selected": false,
+            "text": "All",
+            "value": "$__all"
+          },
+          {
+            "selected": false,
+            "text": "DEBUG",
+            "value": "DEBUG"
+          },
+          {
+            "selected": false,
+            "text": "INFO",
+            "value": "INFO"
+          },
+          {
+            "selected": false,
+            "text": "WARNING",
+            "value": "WARNING"
+          },
+          {
+            "selected": false,
+            "text": "SUCCESS",
+            "value": "SUCCESS"
+          },
+          {
+            "selected": true,
+            "text": "ERROR",
+            "value": "ERROR"
+          },
+          {
+            "selected": false,
+            "text": "CRITICAL",
+            "value": "CRITICAL"
+          }
+        ],
+        "query": "DEBUG, INFO, WARNING, SUCCESS, ERROR, CRITICAL",
+        "queryValue": "",
+        "skipUrlSync": false,
+        "type": "custom"
+      },
+      {
+        "current": {
+          "selected": true,
+          "text": ".*",
+          "value": ".*"
+        },
+        "description": "Some word or regex expression to search in logging panels.",
+        "hide": 0,
+        "label": "Log Regex",
+        "name": "log_regex",
+        "options": [
+          {
+            "selected": true,
+            "text": ".*",
+            "value": ".*"
+          }
+        ],
+        "query": ".*",
+        "skipUrlSync": false,
+        "type": "textbox"
+      },
+      {
+        "hide": 2,
+        "label": "GitHub Project URL",
+        "name": "git_proj_url",
+        "query": "https://github.com/gsolaril/tmgr/blob/master/tmgr",
+        "skipUrlSync": false,
+        "type": "constant"
+      },
+      {
+        "current": {
+          "selected": true,
+          "text": "(CASE category WHEN 0 THEN 'Source' WHEN 1 THEN 'Target' WHEN 2 THEN 'Test' ELSE 'Unknown' END) AS category",
+          "value": "(CASE category WHEN 0 THEN 'Source' WHEN 1 THEN 'Target' WHEN 2 THEN 'Test' ELSE 'Unknown' END) AS category"
+        },
+        "description": "",
+        "hide": 2,
+        "label": "map_category",
+        "name": "map_category",
+        "options": [
+          {
+            "selected": true,
+            "text": "(CASE category WHEN 0 THEN 'Source' WHEN 1 THEN 'Target' WHEN 2 THEN 'Test' ELSE 'Unknown' END) AS category",
+            "value": "(CASE category WHEN 0 THEN 'Source' WHEN 1 THEN 'Target' WHEN 2 THEN 'Test' ELSE 'Unknown' END) AS category"
+          }
+        ],
+        "query": "(CASE category WHEN 0 THEN 'Source' WHEN 1 THEN 'Target' WHEN 2 THEN 'Test' ELSE 'Unknown' END) AS category",
+        "skipUrlSync": false,
+        "type": "textbox"
+      },
+      {
+        "current": {
+          "selected": true,
+          "text": "regexp_replace(server, '( |(?<=FX)Global.*|-.*)', '', 'g') AS server",
+          "value": "regexp_replace(server, '( |(?<=FX)Global.*|-.*)', '', 'g') AS server"
+        },
+        "hide": 2,
+        "label": "map_server",
+        "name": "map_server",
+        "options": [
+          {
+            "selected": true,
+            "text": "regexp_replace(server, '( |(?<=FX)Global.*|-.*)', '', 'g') AS server",
+            "value": "regexp_replace(server, '( |(?<=FX)Global.*|-.*)', '', 'g') AS server"
+          }
+        ],
+        "query": "regexp_replace(server, '( |(?<=FX)Global.*|-.*)', '', 'g') AS server",
+        "skipUrlSync": false,
+        "type": "textbox"
+      },
+      {
+        "hide": 2,
+        "label": "map_metric",
+        "name": "map_metric",
+        "query": "format('%s :: %s :: %s (\"%s\")', category, server, id, owner) AS metric",
+        "skipUrlSync": false,
+        "type": "constant"
+      }
+    ]
+  },
+  "time": {
+    "from": "now-1h",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "utc",
+  "title": "Test dashboard",
+  "uid": "test",
+  "version": 339,
+  "weekStart": ""
+}
