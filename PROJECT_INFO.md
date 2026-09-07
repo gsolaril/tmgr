@@ -14,11 +14,8 @@
 3. [Roadmap](#3-roadmap)
 4. [Final Architecture](#4-final-architecture)
 5. [Technical Requirements and Implemented Features](#5-technical-requirements-and-implemented-features)
-6. [Development Evolution](#6-development-evolution)
-7. [Testing and Operational Readiness](#7-testing-and-operational-readiness)
-8. [Final Assessment](#8-final-assessment)
-9. [Future Roadmap](#9-future-roadmap)
-10. [Conclusion](#10-conclusion)
+6. [Final Assessment](#6-final-assessment)
+7. [Future Roadmap](#7-future-roadmap)
 
 ## 1. Executive Summary
 
@@ -64,9 +61,9 @@ TradeManager treats the source order as the origin of a controlled group of targ
 
 The TradeManager was our opportunity to scale up the business: selected account owners with larger capitals could copy our institutional-grade trades done with direct market access, while still held within the retail trading layer. The business would keep a percentage of the returns, while paying lower commissions and spreads due to higher trade volumes.
 
-## 3. Roadmap (dates between Jan 2024 and Apr 2024)
+## 3. Roadmap 
 
-The repository supports the following logical development stages. Replace this conceptual sequence with the actual chronology where possible.
+The repository supports the following logical development stages. Replace this conceptual sequence with the actual chronology where possible. Dates between Jan 2024 and Apr 2024:
 
 | Stage | Start | End | Main objective | Planned behavior | Result |
 | --- | --- | --- | --- | --- | --- |
@@ -246,9 +243,3 @@ Such structure also became a starting point to separate the business resources &
 **Exploratory**:
 1. **TradeManager V2 collocation**: service to be hosted on bare-metal server close to trading venue for faster response. HFT copy-trading is conceptually subjected to the data-to-trade pipeline twice. Pretend the 2nd time to cause the least additional delays as possible.
 2. **TradeManager V2 deployment patterns**: same controller database for all instances, adjustable account categories based on location where the TM instance is currently hosted (which server, which colo, which provider)
-
-## 10. Conclusion
-
-TradeManager delivers a modular platform for controlled trade replication across heterogeneous MetaTrader accounts. Its architecture combines WebSocket event ingestion, asynchronous messaging, REST execution, configurable risk management, PostgreSQL persistence, Redis caching, reconciliation, and operational visualization.
-
-The repository establishes what the product does technically. The author-completed sections should add the missing project history: why the work began, how the roadmap changed, which obstacles shaped the design, and what measurable results were achieved. Together, those details will turn this document into a concise project presentation suitable for senior engineers, junior developers, and business stakeholders.
