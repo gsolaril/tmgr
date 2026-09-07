@@ -100,6 +100,9 @@ flowchart LR
 	W --> L
 ```
 
+<p>The schematic of the complete architecture can be found on the file "<code>misc/TMGR.drawio</code>". A screenshot can be seen here...</p>
+<center><img src = "./misc/TMGR.jpg" width = "85%"></center>
+
 ### Runtime responsibilities
 
 | Component | Responsibility | Important behavior |
